@@ -1,0 +1,15 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+:root {
+    --gold: #c4c408;
+    --darkblue: #011422;
+    --lightblue: #329AD4;
+}

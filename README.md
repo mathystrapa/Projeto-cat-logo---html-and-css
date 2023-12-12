@@ -1,0 +1,1 @@
+Este repositório é destinado ao aprendizado de HTML e CSS (este principalmente) enquando desenvolvo um pequeno projeto: um catálogo de relógios de luxo
