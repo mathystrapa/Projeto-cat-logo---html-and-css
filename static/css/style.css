@@ -1,15 +1,86 @@
-/* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+/* fonts Lato, Roboto & Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@300&family=Roboto&display=swap');
 
+/* animations */
+@keyframes header-animation {
+    from {
+        background-color: #162f3f;
+    }
+    to {
+        background-color: var(--gold);
+    }
+}
+
+
+/* reseting */
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     outline: none;
+    font-family: 'Lato', sans-serif;
 }
 
+/* colors shortcuts */
 :root {
-    --gold: #c4c408;
+    --light-gold: #996F3A;
+    --gold: #a8910b;
     --darkblue: #011422;
-    --lightblue: #329AD4;
+    --lightblue: #396DFA;
+    --cyan: #39E6FA;
+    --purple: #8239FA;
+    --blue: #4339FA;
+}
+
+/* header styles */
+.logo {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 200px;
+    max-width: 200px;
+    border-radius: 40px;
+}
+
+.logo p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+    color: var(--light-gold);
+}
+
+header {
+    background-color: var(--darkblue);
+}
+
+header .content nav ul {
+    list-style: none;
+    background-color: #162f3f;
+    height: 40px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+header .content nav ul a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--light-gold);
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+header .content nav ul a:hover {      /* activates when the mouse is over the <a> tag */
+    animation-name: header-animation;   /* calls the animation */
+    animation-duration: 1s;
+    color: var(--darkblue);     /* defines another color for the text so it can be visible during the animation */
+    animation-fill-mode: forwards;      /* animation will keep on the 'to' mode after the animation duration is over */
 }
