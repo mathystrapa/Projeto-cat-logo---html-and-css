@@ -21,6 +21,11 @@
     font-family: 'Lato', sans-serif;
 }
 
+hr {
+    height: 20px;
+    background-color: var(--gold);
+}
+
 /* colors shortcuts */
 :root {
     --light-gold: #996F3A;
@@ -83,4 +88,75 @@ header .content nav ul a:hover {      /* activates when the mouse is over the <a
     animation-duration: 1s;
     color: var(--darkblue);     /* defines another color for the text so it can be visible during the animation */
     animation-fill-mode: forwards;      /* animation will keep on the 'to' mode after the animation duration is over */
+}
+
+/* slogan styles */
+.slogan {
+    background-color: var(--darkblue);
+    text-align: center;
+}
+
+.slogan img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.slogan .text1,
+.slogan .text2 {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+    font-family: 'Montserrat';
+    font-size: 60px;
+    font-weight: 550;
+    color: var(--light-gold);
+}
+
+.text1 {
+    margin-right: -100px;
+    transform: translateX(-161px);
+    transition: transform 2s;
+}
+
+.text2 {
+    margin-left: -100px;
+    transform: translateX(160px);
+    transition: transform 3s;
+}
+
+/* slider styles */
+.banners-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.banners-slider .slider-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banners-slider .slider-images img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.banners-slider .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.banners-slider #next {
+    right: 10%;
+}
+
+.banners-slider #prev {
+    left: 10%;
 }
