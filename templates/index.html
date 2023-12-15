@@ -10,17 +10,17 @@
 
     <header>
         <div class="content">
-            <div class="logo">
+            <div class="logo">  <!--logo & store title-->
                 <img src="../static/img/logo.jpg" alt="logo">
                 <p><strong>Timeless</strong> Watches</p>
             </div>
-            <nav>
+            <nav>   <!--navegation links-->
                 <ul>
-                    <a href="#colecoes">
+                    <a href="#colecoes" onclick="scrolltomiddle('colecoes')">
                         <li>Coleções</li>
                     </a>
-                    <a href="#">
-                        <li>Mais procurados</li>
+                    <a href="#famous" onclick="scrolltomiddle('famous')">
+                        <li>Mais famosos</li>
                     </a>
                     <a href="#">
                         <li>Sobre</li>
@@ -31,34 +31,50 @@
     </header>
 
     <section class="slogan">
-        <div class="text1">
+        <div class="text1"> <!--left slogan text-->
             <p>Relógios</p>
             <p>que</p>
             <p>contam</p>
         </div>
         
-        <img src="../static/img/banner1.jpg" alt="slogan">
+        <img src="../static/img/slogan.jpg" alt="slogan">
         
-        <div class="text2">
+        <div class="text2"> <!--right slogan text-->
             <p>histórias</p>
             <p>de</p>
             <p>luxo</p>
         </div>
     </section>
 
-    <hr>
+    <hr id="yellow-hr">
 
-    <section class="banners-slider" id="colecoes">
+    <div id="colecoes" class="scroll-target">
+        <section class="slider-container">    <!--collections slider-->
+            <div class="slider-wrapper">
+                <img class="slide" src="../static/img/classic-collection.png" alt="classic-collection">
+                <img class="slide" src="../static/img/exclusive-collection.png" alt="exclusive-collection">
+                <img class="slide" src="../static/img/sports-collection.png" alt="sports-collection">
+            </div>
+            <button class="prev" onclick="prevSlide()"><img src="../static/img/right-arrow.png" alt="previous-image-button"></button>
+            <button class="next" onclick="nextSlide()"><img src="../static/img/right-arrow.png" alt="next-image-button"></button>
+        </section>
+    </div>
 
-        <button class="slider-button" id="prev"><img src="../static/img/right-arrow.png" alt="prev-button"></button>
+    <section class="famous" id="famous">    <!--most requisited-->
 
-        <div class="slider-images">
-            <img src="../static/img/banner-classic.png" alt="classic-collection">
-            <img src="../static/img/banner-sport.png" alt="elite-sport-collection">
-            <img src="../static/img/banner-exclusive.png" alt="exclusive-collection">
+        <div class="title">
+            <p>Mais famosos</p>
         </div>
 
-        <button class="slider-button" id="next"><img src="../static/img/right-arrow.png" alt="next-button"></button>
+        <div class="products">
+               
+            <div class="product"><img src="../static/img/famous1.jpg"></div>
+            <div class="product"><img src="../static/img/famous2.jpg"></div>
+            <div class="product"><img src="../static/img/famous3.jpg"></div>
+            <div class="product"><img src="../static/img/famous4.jpg"></div>
+            <div class="product"><img src="../static/img/famous5.jpg"></div>
+
+        </div>
 
     </section>
     
