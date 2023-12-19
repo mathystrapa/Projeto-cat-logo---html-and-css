@@ -16,10 +16,10 @@
             </div>
             <nav>   <!--navegation links-->
                 <ul>
-                    <a href="#colecoes" onclick="scrolltomiddle('colecoes')">
+                    <a href="#colecoes">
                         <li>Coleções</li>
                     </a>
-                    <a href="#famous" onclick="scrolltomiddle('famous')">
+                    <a href="#famous">
                         <li>Mais famosos</li>
                     </a>
                     <a href="#">
@@ -46,38 +46,347 @@
         </div>
     </section>
 
-    <hr id="yellow-hr">
+    <hr class="yellow-hr">
 
-    <div id="colecoes" class="scroll-target">
-        <section class="slider-container">    <!--collections slider-->
-            <div class="slider-wrapper">
-                <img class="slide" src="../static/img/classic-collection.png" alt="classic-collection">
-                <img class="slide" src="../static/img/exclusive-collection.png" alt="exclusive-collection">
-                <img class="slide" src="../static/img/sports-collection.png" alt="sports-collection">
+    <section class="slider-container">
+
+        <div class="title">
+            <p>Coleções</p>
+        </div>
+
+        <div class="scroll-target" id="colecoes">
+            <div class="main">
+                <div class="slider">
+                    <div class="slide">
+                        <a href="#classical">
+                            <img src="../static/img/classic-collection.png" alt="clasical-collection">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="#exclusive">
+                            <img src="../static/img/exclusive-collection.png" alt="exclusive-collection">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="#sports">
+                            <img src="../static/img/sports-collection.png" alt="sports-collection">
+                        </a>
+                        </div>
+                    </div>
+                <div class="controls">
+                    <button class="prev-btn" onclick="prevSlide()"><img src="../static/img/right-arrow.png"></button>
+                    <button class="next-btn" onclick="nextSlide()"><img src="../static/img/right-arrow.png"></button>
+                </div>
             </div>
-            <button class="prev" onclick="prevSlide()"><img src="../static/img/right-arrow.png" alt="previous-image-button"></button>
-            <button class="next" onclick="nextSlide()"><img src="../static/img/right-arrow.png" alt="next-image-button"></button>
-        </section>
-    </div>
+        </div>
 
-    <section class="famous" id="famous">    <!--most requisited-->
+    </section>
+
+
+
+    <section class="collection">    <!--MOST REQUISITED-->
 
         <div class="title">
             <p>Mais famosos</p>
         </div>
 
-        <div class="products">
+        <div class="products scroll-target" id="famous">
                
-            <div class="product"><img src="../static/img/famous1.jpg"></div>
-            <div class="product"><img src="../static/img/famous2.jpg"></div>
-            <div class="product"><img src="../static/img/famous3.jpg"></div>
-            <div class="product"><img src="../static/img/famous4.jpg"></div>
-            <div class="product"><img src="../static/img/famous5.jpg"></div>
+            <div class="row last">
+
+                <div class="product">
+                   <img src="../static/img/famous1.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Daytona light gold</p>
+                        <p class="watch-value">R$ R$ 130.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous2.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Oyester Perpetual Cosmograph Daytona</p>
+                        <p class="watch-value">R$ R$ 180.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous3.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Oyster Perpetual red & blue</p>
+                        <p class="watch-value">R$ R$ 150.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous4.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Submariner</p>
+                        <p class="watch-value">R$ R$ 200.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous5.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Relógio Jacob & Co. Bugatti</p>
+                        <p class="watch-value">R$ R$ 5.000.000</p>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
 
     </section>
+
+    <section class="collection hidden-scroll-target" id="classical">    <!--CLASSICAL COLLECTION-->
+
+        <div class="title">
+            <p>Clássicos</p>
+        </div>
+
+        <div class="products">
+               
+            <div class="row">
+
+                <div class="product">
+                   <img src="../static/img/famous1.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Daytona light gold</p>
+                        <p class="watch-value">R$ R$ 130.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous2.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Oyester Perpetual Cosmograph Daytona</p>
+                        <p class="watch-value">R$ R$ 180.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous3.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Oyster Perpetual red & blue</p>
+                        <p class="watch-value">R$ R$ 150.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous4.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Submariner</p>
+                        <p class="watch-value">R$ R$ 200.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous5.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Relógio Jacob & Co. Bugatti</p>
+                        <p class="watch-value">R$ R$ 5.000.000</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="collection hidden-scroll-target" id="exclusive">    <!--EXCLUSIVE COLLECTION-->
+
+        <div class="title">
+            <p>Exclusivos</p>
+        </div>
+
+        <div class="products">
+
+            <div class="row">
+
+                <div class="product">
+                    <img src="../static/img/exclusive1.jpg">
+                        <div class="watch-info">
+                            <p class="watch-name">Breguet Marie Antoinette</p>
+                            <p class="watch-value">R$ 70.000.000</p>
+                        </div>
+                    </img>
+                </div>
+                <div class="product">
+                    <img src="../static/img/exclusive2.jpg">
+                        <div class="watch-info">
+                            <p class="watch-name">Patek Philippe Henry Graves Super Complication</p>
+                            <p class="watch-value">R$ 55.000.000</p>
+                        </div>
+                    </img>
+                </div>
+                <div class="product">
+                    <img src="../static/img/exclusive3.jpg">
+                        <div class="watch-info">
+                            <p class="watch-name">Patek Philippe 1939 Platinum World Time</p>
+                            <p class="watch-value">R$ 40.000.000</p>
+                        </div>
+                    </img>
+                </div>
+                <div class="product">
+                    <img src="../static/img/exclusive4.jpg">
+                        <div class="watch-info">
+                            <p class="watch-name">Patek Philippe 1928 Single Button Chronograph</p>
+                            <p class="watch-value">R$ 37.000.000</p>
+                        </div>
+                    </img>
+                </div>
+                <div class="product">
+                    <img src="../static/img/exclusive5.jpg">
+                        <div class="watch-info">
+                            <p class="watch-name">Piaget Emperador Temple</p>
+                            <p class="watch-value">R$ 30.000.000</p>
+                        </div>
+                    </img>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="product">
+                    <img src="../static/img/exclusive6.jpg">
+                        <div class="watch-info">
+                            <p class="watch-name">A. Lange & Sohne’s Grand Complication</p>
+                            <p class="watch-value">R$ 30.000.000</p>
+                        </div>
+                    </img>
+                </div>
+                <div class="product">
+                    <img src="../static/img/exclusive7.jpg">
+                        <div class="watch-info">
+                            <p class="watch-name">Louis Moinet Meteoris</p>
+                            <p class="watch-value">R$ 28.000.000</p>
+                        </div>
+                    </img>
+                </div>
+                <div class="product">
+                    <img src="../static/img/exclusive8.jpg">
+                        <div class="watch-info">
+                            <p class="watch-name">Patek Philippe Referência 1527</p>
+                            <p class="watch-value">R$ 25.000.000</p>
+                        </div>
+                    </img>
+                </div>
+                <div class="product">
+                    <img src="../static/img/exclusive9.jpg">
+                        <div class="watch-info">
+                            <p class="watch-name">Breguet & Fils, Paris, No. 2667 Precision</p>
+                            <p class="watch-value">R$ 23.000.000</p>
+                        </div>
+                    </img>
+                </div>
+                <div class="product">
+                    <img src="../static/img/exclusive10.jpg">
+                        <div class="watch-info">
+                            <p class="watch-name">Chopard 201 Carat 874 diamonts</p>
+                            <p class="watch-value">R$ 14.000.000</p>
+                        </div>
+                    </img>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="collection hidden-scroll-target" id="sports"> <!--SPORT COLLECTION-->
+
+        <div class="title">
+            <p>Esportivos</p>
+        </div>
+
+        <div class="products">
+               
+            <div class="row">
+
+                <div class="product">
+                   <img src="../static/img/famous1.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Daytona light gold</p>
+                        <p class="watch-value">R$ R$ 130.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous2.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Oyester Perpetual Cosmograph Daytona</p>
+                        <p class="watch-value">R$ R$ 180.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous3.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Oyster Perpetual red & blue</p>
+                        <p class="watch-value">R$ R$ 150.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous4.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Rolex Submariner</p>
+                        <p class="watch-value">R$ R$ 200.000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="../static/img/famous5.jpg">
+                    <div class="watch-info">
+                        <p class="watch-name">Relógio Jacob & Co. Bugatti</p>
+                        <p class="watch-value">R$ R$ 5.000.000</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </section>
+
+    <footer>
+
+        <div class="top-section">
+
+            <div class="footer-logo">
+                <img src="../static/img/logo.jpg" alt="logo">
+            </div>
+
+            <div class="legal-warnings">
+                <p>Avisos legais</p>
+                <ul>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Política de privacidade</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="social-medias">
+
+            <div class="main">
+
+                <div class="social-medias-title">
+                    <p>Canais oficiais</p>
+                </div>
+
+                <div class="logos">
+                    <div class="social-media"><a href="https://www.instagram.com/rolex" target="_blank"><img src="../static/img/logo-instagram.png" alt="logo instagram"></a></div>
+                    <div class="social-media"><a href="https://www.tiktok.com/@rolex" target="_blank"><img src="../static/img/logo-tiktok.png" alt="logo tiktok"></a></div>
+                    <div class="social-media"><a href="https://www.facebook.com/rolex" target="_blank"><img src="../static/img/logo-facebook.png" alt="logo facebook"></a></div>
+                    <div class="social-media"><a href="https://twitter.com/rolex" target="_blank"><img src="../static/img/logo-x.jpg" alt="logo X"></a></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="all-rights-reserved">
+            <p>Todos os direitos reservados &copy; 2023</p>
+        </div>
+
+    </footer>
     
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../static/js/index.js"></script>
 </body>
 </html>

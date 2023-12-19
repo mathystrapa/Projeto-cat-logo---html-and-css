@@ -1,26 +1,39 @@
-// slider functions
+// slider funcions
 let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
 
 function showSlide(index) {
-    const sliderWrapper = document.querySelector('.slider-wrapper');
-    const slides = document.querySelectorAll('.slide');
+  if (index == -1) {
+    currentIndex = 2;
+  } else if (index == 3) {
+    currentIndex = 0;
+  } else {
+    currentIndex = index;
+  }
 
-    if (index < 0) {
-        currentIndex = slides.length - 1;
-    } else if (index >= slides.length) {
-        currentIndex = 0;
-    } else {
-        currentIndex = index;
-    }
-
-    const displacement = -currentIndex * 100 + '%';
-    sliderWrapper.style.transform = 'translateX(' + displacement + ')';
-}
-
-function prevSlide() {
-    showSlide(currentIndex - 1);
+  const newTransformValue = -currentIndex * 100 + '%';
+  document.querySelector('.slider').style.transform = 'translateX(' + newTransformValue + ')';
 }
 
 function nextSlide() {
-    showSlide(currentIndex + 1);
+  showSlide(currentIndex + 1);
 }
+
+function prevSlide() {
+  showSlide(currentIndex - 1);
+}
+
+// auto play slides
+setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+
+// set the last line in the bottom of the page
+$(document).ready(function() {
+  $(window).scroll(function() {
+    if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+      $('#all-rights-reserved').fadeIn();
+    } else {
+      $('#all-rights-reserved').fadeOut();
+    }
+  });
+});

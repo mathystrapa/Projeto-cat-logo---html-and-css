@@ -1,6 +1,7 @@
 /* fonts Lato, Roboto & Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@300&family=Roboto&display=swap');
 
+
 /* animations */
 @keyframes header-animation {
     from {
@@ -13,11 +14,35 @@
 
 @keyframes grow-animation {
     from {
-        width: 30vh;
+        width: 25vh;
     }
     to {
-        width: 35vh;
+        width: 40vh;
     }
+}
+
+@keyframes decrease {
+    from {
+        width: 40vh;
+    }
+    to {
+        width: 25vh;
+    }
+}
+
+@keyframes blink {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: 0.3;}
+}
+
+@keyframes show-info {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes show-from-left-to-right {
+    from {width: 0%;}
+    to {width: 100%;}
 }
 
 
@@ -36,27 +61,75 @@ body:not(header) {
     background-color: var(--darkblue);
 }
 
-#yellow-hr {
+
+/* hr styles */
+hr {
     height: 20px;
-    background-color: var(--gold);
     margin-top: 20px;
     margin-bottom: 20px;
+    border: none;
 }
+
+hr.yellow-hr {
+    background-color: var(--gold);
+}
+
 
 /* colors shortcuts */
 :root {
     --light-gold: #996F3A;
     --gold: #a8910b;
-    --darkblue: #041f33;
+    --darkblue: #011422;
     --cyan: #39E6FA;
     --purple: #8239FA;
     --blue: #162f3f;
 }
 
-/* style for elements that are href targets */
-.scroll-target {
-    scroll-margin: 15vh;
+
+/* set hidden collections hidden */
+.hidden-scroll-target {
+    display: none;
 }
+
+
+/* style for elements that are href targets */
+.scroll-target:target {
+    display: block;
+    scroll-margin: 22vh;
+    animation: blink 2s;
+}
+
+
+/* show hidden collections when clicked */
+.hidden-scroll-target:target {
+    display: block;
+}
+
+.hidden-scroll-target:target .title {
+    animation: show-from-left-to-right 2s;
+}
+
+.hidden-scroll-target:target .products {
+    animation: show-info 5s;
+}
+
+/* titles styles */
+.title {
+    height: 12vh;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6vh;
+}
+
+.title p {
+    color: var(--light-gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 550;
+}
+
 
 /* header styles */
 .logo {
@@ -66,8 +139,7 @@ body:not(header) {
 }
 
 .logo img {
-    max-height: 100px;
-    max-width: 100px;
+    width: 21vh;
     border-radius: 40px;
 }
 
@@ -78,12 +150,12 @@ body:not(header) {
 }
 
 header {
-    background-color: var(--darkblue);
+    background-color: #011422;
 }
 
 header .content nav ul {
     list-style: none;
-    background-color: #162f3f;
+    background-color: var(--blue);
     height: 40px;
     display: flex;
     flex-flow: row nowrap;
@@ -110,6 +182,7 @@ header .content nav ul a:hover {      /* activates when the mouse is over the <a
     color: var(--darkblue);     /* defines another color for the text so it can be visible during the animation */
     animation-fill-mode: forwards;      /* animation will keep on the 'to' mode after the animation duration is over */
 }
+
 
 /* slogan styles */
 .slogan {
@@ -150,93 +223,226 @@ header .content nav ul a:hover {      /* activates when the mouse is over the <a
     transition: transform 3s;
 }
 
+
 /* slider styles */
-.slider-container {
+.slider-container .main {
     position: relative;
-    width: 100%;
-    max-width: 800px;
+    width: 60%;
     margin: auto;
     overflow: hidden;
-    border-radius: 50px;
-    scroll-padding: 20px;
+    border-radius: 100px;
 }
-
-.slider-container .slider-wrapper {
+  
+.slider-container .main .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
-
-.slider-container .slider-wrapper .slide {
-    width: 100%;
+  
+.slider-container .main .slider .slide {
+    min-width: 100%;
 }
-
-.slider-container button {
+  
+.slider-container .main .slider .slide img {
+    width: 100%;
+    height: auto;
+}
+  
+.slider-container .controls button {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background: transparent;
+    width: 5%;
     border: none;
+    background: transparent;
+    cursor: default;
 }
 
-.slider-container button img {
-    width: 40px;
-    height: 40px;
+.slider-container .controls button.next-btn {
+    right: 0%;
 }
 
-.slider-container .prev img {
+.slider-container .prev-btn img {
     transform: rotate(180deg);
 }
 
-.slider-container .prev {
-    left: 0px;
+
+/* collection styles */
+.collection {
+    margin-top: 5vh;
 }
 
-.slider-container .next {
-    right: 0px;
-}
-
-/* most-famous styles */
-.famous {
-    margin-top: 20px;
-}
-
-.famous .title {
-    height: 80px;
-    background-color: var(--blue);
+.collection .products {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
+    flex-flow: column wrap;
 }
 
-.famous .title p {
-    color: var(--light-gold);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
-    font-weight: 500;
-}
-
-.famous .products {
+.collection .products .row {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    margin: 0px 50px;
 }
 
-.famous .products img {
-    width: 30vh;
+.collection .products .row:not(.last) {
+    margin-bottom: 6vh;
+}
+
+.collection .products .row .product {
+    display: block;
+    position: relative;
+}
+
+.collection .products .row .product img {
+    width: 25vh;
     border-radius: 30px;
+    animation: decrease 0.3s;
 }
 
-.famous .products img:hover {
-    animation-name: grow-animation;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
+.collection .products .row .product img:hover {
+    animation: grow-animation 0.3s forwards;
+    cursor: grab;
+    border: solid var(--gold);
 }
 
-.famous .products img:active {
-    
+.collection .products .row .product .watch-info {
+    display: none;
+    pointer-events: none;
+    max-width: 85%;
+}
+
+.collection .products .row .product:active img {
+    opacity: 0.2;
+    cursor: grabbing;
+}
+
+.collection .products .row .product:active .watch-info {
+    display: flex;
+    animation: show-info 1s;
+    position: absolute;
+    flex-flow: column wrap;
+    top: 20%;
+    left: 10%;
+}
+
+.collection .products .row .product:active .watch-info p.watch-name {
+    color: whitesmoke;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 30%;
+}
+
+.collection .products .row .product:active .watch-info p.watch-value {
+    color: var(--gold);
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 10%;
+    align-self: self-start;
+}
+
+
+/* footer styles */
+footer {
+    background-color: var(--blue);
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+footer p {
+    font-weight: 500;
+}
+
+footer .top-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 5vh 5vh;
+}
+
+footer .top-section .footer-logo img {
+    border-radius: 40px;
+    width: 20vh;
+}
+
+footer .top-section .legal-warnings {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+footer .top-section .legal-warnings p {
+    font-size: 4vh;
+    margin-bottom: 2vh;
+}
+
+footer .top-section .legal-warnings ul {
+    font-size: 3vh;
+    list-style: disc;
+}
+
+footer .top-section .legal-warnings ul li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+footer .top-section .legal-warnings ul li:hover {
+    list-style: circle;
+    color: var(--gold);
+}
+
+footer .top-section .legal-warnings ul li:hover a {
+    text-decoration: underline;
+    color: var(--gold);
+}
+
+footer .social-medias {
+    position: relative;
+    margin-top: 8vh;
+}
+
+footer .social-medias .main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+footer .social-medias .main .social-medias-title {
+    align-self: center;
+    margin-bottom: 3vh;
+    font-size: 5vh;
+}
+
+footer .social-medias .main .logos {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+footer .social-medias .main .logos .social-media {
+    padding: 5vh;
+}
+
+footer .social-medias .main .logos .social-media img {
+    width: 10vh;
+    border-radius: 50px;
+}
+
+footer .social-medias .main .logos .social-media img:hover {
+    border: 3px solid var(--darkblue);
+}
+
+footer .all-rights-reserved {
+    background-color: whitesmoke;
+}
+
+#all-rights-reserved {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--blue);
+    padding: 10px;
+    text-align: center;
 }
