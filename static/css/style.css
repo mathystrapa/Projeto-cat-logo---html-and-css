@@ -95,7 +95,7 @@ hr.yellow-hr {
 /* style for elements that are href targets */
 .scroll-target:target {
     display: block;
-    scroll-margin: 22vh;
+    scroll-margin: 18vh;
     animation: blink 2s;
 }
 
@@ -121,6 +121,7 @@ hr.yellow-hr {
     justify-content: center;
     align-items: center;
     margin-bottom: 6vh;
+    position: relative;
 }
 
 .title p {
@@ -270,6 +271,12 @@ header .content nav ul a:hover {      /* activates when the mouse is over the <a
     margin-top: 5vh;
 }
 
+.collection .collection-description {
+    background-color: var(--cyan);
+    display: flex;
+    
+}
+
 .collection .products {
     display: flex;
     flex-flow: column wrap;
@@ -346,6 +353,7 @@ footer {
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-top: 5vh;
 }
 
 footer p {
